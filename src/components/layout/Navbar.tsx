@@ -18,12 +18,12 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
+    { name: 'Inicio', path: '/' },
+    { name: 'Servicios', path: '/services' },
     ...(isAuthenticated 
       ? [
-          { name: 'My Appointments', path: '/appointments' },
-          { name: 'Book Now', path: '/book' }
+          { name: 'Mis citas', path: '/appointments' },
+          { name: 'Reservar ahora', path: '/book' }
         ] 
       : [])
   ];
@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <h1 className="text-xl font-semibold text-emerald-700">Serene Spa</h1>
+              <h1 className="text-xl font-semibold text-emerald-700">Spa Sentirse Bien</h1>
             </Link>
           </div>
           
@@ -54,15 +54,15 @@ const Navbar: React.FC = () => {
             <div className="flex items-center ml-4">
               {isAuthenticated ? (
                 <Button variant="outline" onClick={handleLogout}>
-                  Logout
+                  Salir
                 </Button>
               ) : (
                 <div className="flex space-x-2">
                   <Link to="/login">
-                    <Button variant="outline">Login</Button>
+                    <Button variant="outline">Iniciar Sesión</Button>
                   </Link>
                   <Link to="/register">
-                    <Button>Sign Up</Button>
+                    <Button>Registrarse</Button>
                   </Link>
                 </div>
               )}
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
                 onClick={handleLogout}
                 className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-emerald-600 hover:bg-[#f0faf1]"
               >
-                Logout
+                Salir
               </button>
             ) : (
               <>
@@ -109,14 +109,14 @@ const Navbar: React.FC = () => {
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-emerald-600 hover:bg-[#f0faf1]"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Login
+                  Iniciar sesión
                 </Link>
                 <Link
                   to="/register"
                   className="block px-3 py-2 rounded-md text-base font-medium text-emerald-600 hover:text-emerald-700 hover:bg-[#f0faf1]"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Sign Up
+                  Registrarse
                 </Link>
               </>
             )}

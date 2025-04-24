@@ -23,23 +23,23 @@ const Features: React.FC = () => {
   const features = [
     {
       icon: <Award size={24} />,
-      title: 'Expert Therapists',
-      description: 'Our licensed professionals have years of experience in various therapeutic techniques.'
+      title: 'Terapeutas expertos',
+      description: 'Nuestros profesionales licenciados tienen años de experiencia en diversas técnicas terapéuticas.'
     },
     {
       icon: <Heart size={24} />,
-      title: 'Premium Products',
-      description: 'We use only high-quality, organic products that nourish your skin and body.'
+      title: 'Productos Premium',
+      description: 'Utilizamos únicamente productos orgánicos de alta calidad que nutren tu piel y tu cuerpo.'
     },
     {
       icon: <Clock size={24} />,
-      title: 'Flexible Hours',
-      description: 'Open 7 days a week with extended hours to accommodate your busy schedule.'
+      title: 'Horario flexible',
+      description: 'Abierto los 7 días de la semana con horario extendido para adaptarnos a su apretada agenda.'
     },
     {
       icon: <Smile size={24} />,
-      title: 'Personalized Care',
-      description: 'Each treatment is customized to address your specific needs and preferences.'
+      title: 'Atención personalizada',
+      description: 'Cada tratamiento está personalizado para abordar sus necesidades y preferencias específicas.'
     }
   ];
 
@@ -47,9 +47,9 @@ const Features: React.FC = () => {
     <div className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-emerald-700">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold text-emerald-700">¿Por qué elegirnos?</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Experience the difference with our dedicated approach to wellness
+            Experimente la diferencia con nuestro enfoque dedicado al bienestar.
           </p>
         </div>
         

@@ -8,7 +8,7 @@ export const appointments: Appointment[] = [
     serviceId: '2',
     date: '2025-06-15',
     time: '10:00',
-    status: 'confirmed'
+    status: 'cancelado'
   },
   {
     id: '2',
@@ -16,7 +16,7 @@ export const appointments: Appointment[] = [
     serviceId: '1',
     date: '2025-06-20',
     time: '14:30',
-    status: 'pending'
+    status: 'cancelado'
   }
 ];
 
@@ -31,7 +31,7 @@ export const generateTimeSlots = (date: string): TimeSlot[] => {
     slots.push({
       id: `${date}-${timeString}`,
       time: timeString,
-      available: !appointments.some(a => a.date === date && a.time === timeString && a.status !== 'cancelled')
+      available: !appointments.some(a => a.date === date && a.time === timeString && a.status !== 'cancelado')
     });
     
     // Add half-hour slots
@@ -39,7 +39,7 @@ export const generateTimeSlots = (date: string): TimeSlot[] => {
     slots.push({
       id: `${date}-${halfTimeString}`,
       time: halfTimeString,
-      available: !appointments.some(a => a.date === date && a.time === halfTimeString && a.status !== 'cancelled')
+      available: !appointments.some(a => a.date === date && a.time === halfTimeString && a.status !== 'cancelado')
     });
   }
   

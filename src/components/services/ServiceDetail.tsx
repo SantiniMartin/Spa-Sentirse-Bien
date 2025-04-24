@@ -13,12 +13,12 @@ const ServiceDetail: React.FC = () => {
   if (!service) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-12 text-center">
-        <h2 className="text-2xl font-bold text-emerald-700 mb-4">Service Not Found</h2>
+        <h2 className="text-2xl font-bold text-emerald-700 mb-4">Servicio no encontrado</h2>
         <p className="mb-6 text-gray-600">
-          The service you're looking for does not exist or has been removed.
+          El servicio que estás buscando no existe o ha sido eliminado.
         </p>
         <Button onClick={() => navigate('/services')}>
-          View All Services
+         Ver todos los servicios
         </Button>
       </div>
     );
@@ -31,7 +31,7 @@ const ServiceDetail: React.FC = () => {
         className="flex items-center text-emerald-600 hover:text-emerald-700 mb-6"
       >
         <ArrowLeft size={18} className="mr-2" />
-        Back
+        Atrás
       </button>
       
       <Card>
@@ -51,7 +51,7 @@ const ServiceDetail: React.FC = () => {
             
             <div className="flex items-center text-gray-500 mb-4">
               <Clock size={18} className="mr-2" />
-              <span>{service.duration} minutes</span>
+              <span>{service.duration} minutos</span>
             </div>
             
             <div className="bg-[#f0faf1] rounded-lg p-4 flex justify-between items-center mb-6">
@@ -66,13 +66,13 @@ const ServiceDetail: React.FC = () => {
             <div className="space-y-4">
               <Link to={`/book?service=${service.id}`}>
                 <Button fullWidth>
-                  Book Now
+                  Reservar ahora
                 </Button>
               </Link>
               
               <Link to="/services">
                 <Button variant="outline" fullWidth>
-                  View All Services
+                  Reservar todos los servicios
                 </Button>
               </Link>
             </div>

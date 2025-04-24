@@ -66,9 +66,9 @@ const Testimonials: React.FC = () => {
     <div className="py-16 bg-[#f0faf1]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-emerald-700">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold text-emerald-700">Lo que dicen nuestros clientes</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Don't just take our word for it — hear from our satisfied clients
+            No confíe solo en nuestras palabras: escuche a nuestros clientes satisfechos
           </p>
         </div>
         

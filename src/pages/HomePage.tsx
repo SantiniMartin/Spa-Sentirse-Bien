@@ -8,7 +8,7 @@ import Testimonials from '../components/home/Testimonials';
 const HomePage: React.FC = () => {
   const carouselImages = [
     {
-      url: 'https://images.unsplash.com/photo-1554306274-f23873d9a26c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      url: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 ',
       alt: 'Deep tissue massage treatment'
     },
     {
@@ -35,8 +35,8 @@ const HomePage: React.FC = () => {
               <div className="absolute inset-0 bg-black bg-opacity-40" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white">
-                  <h1 className="text-5xl font-bold mb-4">Welcome to Serene Spa</h1>
-                  <p className="text-xl">Your journey to relaxation begins here</p>
+                  <h1 className="text-5xl font-bold mb-4">Bienvenidos a Spa Sentirse Bien</h1>
+                  <p className="text-xl">Tu viaje hacia la relajación comienza aquí</p>
                 </div>
               </div>
             </div>

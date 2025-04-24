@@ -102,7 +102,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onSubmitSuccess }) =>
       serviceId: selectedService!.id,
       date: selectedDate,
       time: selectedTime,
-      status: 'pending'
+      status: 'pendiente'
     });
     
     setIsLoading(false);
@@ -119,12 +119,12 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onSubmitSuccess }) =>
 
   return (
     <Card>
-      <h2 className="text-2xl font-bold text-emerald-700 mb-6">Book Your Appointment</h2>
+      <h2 className="text-2xl font-bold text-emerald-700 mb-6">Reserve su cita</h2>
       
       <form onSubmit={handleSubmit}>
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Select Service
+            Selecione un servicio
           </label>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {services.map(service => (
@@ -157,7 +157,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onSubmitSuccess }) =>
         
         <div className="mb-6">
           <label htmlFor="appointment-date" className="block text-sm font-medium text-gray-700 mb-2">
-            Select Date
+            Selecione una fecha
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -180,7 +180,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onSubmitSuccess }) =>
         {selectedDate && (
           <div className="mb-8">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Select Time
+            Seleccione un horario
             </label>
             <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
               {availableTimeSlots.map((slot) => (
@@ -213,7 +213,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onSubmitSuccess }) =>
           isLoading={isLoading}
           disabled={!isAuthenticated || !selectedService || !selectedDate || !selectedTime}
         >
-          {isAuthenticated ? 'Confirm Booking' : 'Login to Book'}
+          {isAuthenticated ? 'Confirmar reserva' : 'Iniciar sesión para reservar'}
         </Button>
       </form>
     </Card>

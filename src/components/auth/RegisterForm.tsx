@@ -34,28 +34,28 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterSuccess }) => {
     let isValid = true;
 
     if (!name) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'El nombre es obligatorio';
       isValid = false;
     }
 
     if (!email) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'El email es obligatorio';
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = 'email invalido';
       isValid = false;
     }
 
     if (!password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = 'La contraseña es obligatoria';
       isValid = false;
     } else if (password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
+      newErrors.password = 'La contraseña debe tener al menos 6 caracteres';
       isValid = false;
     }
 
     if (password !== confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
+      newErrors.confirmPassword = 'Las contraseñas no coinciden';
       isValid = false;
     }
 
@@ -74,7 +74,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterSuccess }) => {
       if (onRegisterSuccess) onRegisterSuccess();
     } catch (error) {
       setErrors({
-        email: 'Registration failed. This email might already be in use.'
+        email: 'Error en el registro. Es posible que este correo electrónico ya esté en uso.'
       });
     } finally {
       setIsLoading(false);
@@ -83,15 +83,15 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterSuccess }) => {
 
   return (
     <Card className="max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-emerald-700 mb-6">Create Your Account</h2>
+      <h2 className="text-2xl font-bold text-emerald-700 mb-6">Crea tu cuenta</h2>
       <form onSubmit={handleSubmit}>
         <Input
-          label="Full Name"
+          label="Nombre completo"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           error={errors.name}
-          placeholder="John Doe"
+          placeholder="José Fernandez"
           required
         />
         
@@ -101,12 +101,12 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterSuccess }) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           error={errors.email}
-          placeholder="your@email.com"
+          placeholder="ejemplo@email.com"
           required
         />
         
         <Input
-          label="Password"
+          label="Contraseña"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -116,7 +116,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterSuccess }) => {
         />
         
         <Input
-          label="Confirm Password"
+          label="Confirmar contraseña"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
@@ -135,13 +135,13 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterSuccess }) => {
               className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
             />
             <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
-              I agree to the{' '}
+              Estoy de acuerdo con las{' '}
               <a href="#" className="text-emerald-600 hover:text-emerald-500">
-                Terms of Service
+                Condiciones de servicio
               </a>{' '}
-              and{' '}
+              y{' '}
               <a href="#" className="text-emerald-600 hover:text-emerald-500">
-                Privacy Policy
+                políticas de privacidad
               </a>
             </label>
           </div>
@@ -152,15 +152,15 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterSuccess }) => {
           fullWidth
           isLoading={isLoading}
         >
-          Create Account
+          Crear cuenta
         </Button>
       </form>
       
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-600">
-          Already have an account?{' '}
+          ¿Ya tienes una cuenta?{' '}
           <Link to="/login" className="text-emerald-600 hover:text-emerald-500 font-medium">
-            Sign in
+            Iniciar sesión
           </Link>
         </p>
       </div>

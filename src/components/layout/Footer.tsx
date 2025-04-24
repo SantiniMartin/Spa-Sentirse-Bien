@@ -8,11 +8,10 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-lg font-semibold text-emerald-700 mb-4">Serene Spa</h3>
+            <h3 className="text-lg font-semibold text-emerald-700 mb-4">Spa Sentirse Bien</h3>
             <p className="text-gray-600 mb-4">
-              At Serene Spa, we believe in the restorative power of relaxation and self-care.
-              Our dedicated team of professionals is committed to providing you with the ultimate
-              spa experience.
+              En Spa Sentirse Bien, creemos en el poder restaurador de la relajación y el autocuidado.
+              Nuestro dedicado equipo de profesionales se compromete a brindarle la mejor experiencia de spa.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-emerald-600 hover:text-emerald-700">
@@ -38,47 +37,47 @@ const Footer: React.FC = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-emerald-700 mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-emerald-700 mb-4">Enlaces rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-gray-600 hover:text-emerald-600 transition-colors">Home</a>
+                <a href="/" className="text-gray-600 hover:text-emerald-600 transition-colors">Inicio</a>
               </li>
               <li>
-                <a href="/services" className="text-gray-600 hover:text-emerald-600 transition-colors">Services</a>
+                <a href="/services" className="text-gray-600 hover:text-emerald-600 transition-colors">Servicios</a>
               </li>
               <li>
-                <a href="/book" className="text-gray-600 hover:text-emerald-600 transition-colors">Book Appointment</a>
+                <a href="/book" className="text-gray-600 hover:text-emerald-600 transition-colors">Reservar cita</a>
               </li>
               <li>
-                <a href="/login" className="text-gray-600 hover:text-emerald-600 transition-colors">Login</a>
+                <a href="/login" className="text-gray-600 hover:text-emerald-600 transition-colors">Iniciar sesión</a>
               </li>
               <li>
-                <a href="/register" className="text-gray-600 hover:text-emerald-600 transition-colors">Register</a>
+                <a href="/register" className="text-gray-600 hover:text-emerald-600 transition-colors">Registrarse</a>
               </li>
             </ul>
           </div>
           
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold text-emerald-700 mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold text-emerald-700 mb-4">Contactanos</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-emerald-500 mr-2 mt-0.5" />
-                <span className="text-gray-600">123 Serenity Lane, Peaceful City, PC 12345</span>
+                <span className="text-gray-600">Av Siempre Viva, Resistencia Chaco, CP 3500</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-emerald-500 mr-2" />
-                <span className="text-gray-600">(555) 123-4567</span>
+                <span className="text-gray-600">3624000000</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-emerald-500 mr-2" />
-                <span className="text-gray-600">info@serenespa.com</span>
+                <span className="text-gray-600">info@spasentirsebien.com</span>
               </li>
               <li>
-                <h4 className="text-md font-medium text-gray-700 mb-2">Hours</h4>
-                <p className="text-gray-600">Monday - Friday: 9AM - 8PM</p>
-                <p className="text-gray-600">Saturday: 10AM - 6PM</p>
-                <p className="text-gray-600">Sunday: 10AM - 4PM</p>
+                <h4 className="text-md font-medium text-gray-700 mb-2">Horarios</h4>
+                <p className="text-gray-600">Lunes - Viernes: 9AM - 8PM</p>
+                <p className="text-gray-600">Sábado: 10AM - 6PM</p>
+                <p className="text-gray-600">Domingo: 10AM - 4PM</p>
               </li>
             </ul>
           </div>
@@ -86,7 +85,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-8 pt-8 border-t border-[#c0edc7]">
           <p className="text-gray-500 text-center text-sm">
-            © {new Date().getFullYear()} Serene Spa. All rights reserved.
+            © {new Date().getFullYear()} Spa Sentirse Bien. Todos los derechos reservados.
           </p>
         </div>
       </div>

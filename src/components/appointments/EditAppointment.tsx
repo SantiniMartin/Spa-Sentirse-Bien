@@ -99,7 +99,7 @@ const EditAppointment: React.FC = () => {
     updateAppointment(id, {
       date: selectedDate,
       time: selectedTime,
-      status: 'pending' // Reset to pending when edited
+      status: 'pendiente' // Reset to pending when edited
     });
     
     setIsLoading(false);
@@ -120,17 +120,17 @@ const EditAppointment: React.FC = () => {
         className="flex items-center text-emerald-600 hover:text-emerald-700 mb-6"
       >
         <ArrowLeft size={18} className="mr-2" />
-        Back to Appointments
+        Volver a Citas
       </button>
       
       <Card>
-        <h2 className="text-2xl font-bold text-emerald-700 mb-6">Reschedule Appointment</h2>
+        <h2 className="text-2xl font-bold text-emerald-700 mb-6">Reprogramar cita</h2>
         
         <div className="bg-[#f0faf1] rounded-lg p-4 mb-6">
           <h3 className="font-medium text-emerald-800 mb-2">{service.name}</h3>
           <div className="flex items-center text-sm text-gray-600">
             <Clock size={16} className="mr-1" />
-            <span>{service.duration} minutes</span>
+            <span>{service.duration} minutos</span>
             <span className="mx-2">•</span>
             <span className="font-medium">${service.price}</span>
           </div>
@@ -139,7 +139,7 @@ const EditAppointment: React.FC = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label htmlFor="appointment-date" className="block text-sm font-medium text-gray-700 mb-2">
-              Select New Date
+              Seleccionar nueva fecha
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -162,7 +162,7 @@ const EditAppointment: React.FC = () => {
           {selectedDate && (
             <div className="mb-8">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select New Time
+                Seleccionar nueva hora
               </label>
               <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
                 {availableTimeSlots.map((slot) => (
@@ -203,7 +203,7 @@ const EditAppointment: React.FC = () => {
               disabled={!selectedDate || !selectedTime}
               fullWidth
             >
-              Update Appointment
+              Actualizar cita
             </Button>
           </div>
         </form>

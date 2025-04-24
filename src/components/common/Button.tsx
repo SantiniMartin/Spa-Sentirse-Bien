@@ -37,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
       {isLoading ? (
         <div className="flex justify-center items-center">
           <div className="animate-spin h-4 w-4 border-2 border-white border-opacity-50 border-t-white rounded-full mr-2"></div>
-          <span>Loading...</span>
+          <span>Cargando...</span>
         </div>
       ) : (
         children

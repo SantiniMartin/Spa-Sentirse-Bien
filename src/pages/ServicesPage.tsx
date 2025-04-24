@@ -7,10 +7,9 @@ const ServicesPage: React.FC = () => {
     <div className="bg-[#f0faf1] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-emerald-800 mb-4">Our Services</h1>
+          <h1 className="text-3xl font-bold text-emerald-800 mb-4">Nuestros servicios</h1>
           <p className="max-w-2xl mx-auto text-gray-600">
-            Discover our range of rejuvenating treatments designed to help you relax,
-            restore, and revitalize your body and mind.
+          Descubra nuestra gama de tratamientos rejuvenecedores diseñados para ayudarle a relajarse, restaurar y revitalizar su cuerpo y mente.
           </p>
         </div>
         

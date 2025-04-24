@@ -53,7 +53,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
       if (onLoginSuccess) onLoginSuccess();
     } catch (error) {
       setErrors({
-        password: 'Invalid email or password'
+        password: 'Mail o contraseña incorrectos'
       });
     } finally {
       setIsLoading(false);
@@ -64,7 +64,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
     e.preventDefault();
     
     if (!resetEmail) {
-      setErrors({ email: 'Email is required' });
+      setErrors({ email: 'Email requerido' });
       return;
     }
     
@@ -74,7 +74,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
       setResetEmailSent(true);
     } catch (error) {
       setErrors({
-        email: 'Failed to send reset email'
+        email: 'No se pudo enviar el correo electrónico de restablecimiento'
       });
     } finally {
       setIsLoading(false);
@@ -90,8 +90,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
               <div className="w-16 h-16 bg-[#f0faf1] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Lock className="h-8 w-8 text-emerald-600" />
               </div>
-              <h2 className="text-2xl font-bold text-emerald-700">Welcome Back</h2>
-              <p className="mt-2 text-gray-600">Sign in to your account</p>
+              <h2 className="text-2xl font-bold text-emerald-700">Bienvenido de nuevo</h2>
+              <p className="mt-2 text-gray-600">Inicia sesión en tu cuenta</p>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -106,7 +106,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     error={errors.email}
-                    placeholder="your@email.com"
+                    placeholder="ejemplo@email.com"
                     className="pl-10"
                     required
                   />
@@ -119,7 +119,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     <Lock className="h-5 w-5 text-gray-400" />
                   </div>
                   <Input
-                    label="Password"
+                    label="Contraseña"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -140,7 +140,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded cursor-pointer"
                   />
                   <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700 cursor-pointer">
-                    Remember me
+                    Recordarme
                   </label>
                 </div>
                 
@@ -149,7 +149,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                   className="text-sm text-emerald-600 hover:text-emerald-500 font-medium"
                   onClick={() => setShowForgotPassword(true)}
                 >
-                  Forgot password?
+                  ¿Olvidó la contraseña?
                 </button>
               </div>
               
@@ -159,7 +159,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                 isLoading={isLoading}
                 className="flex items-center justify-center"
               >
-                <span>Sign in</span>
+                <span>Iniciar sesión</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </form>
@@ -171,7 +171,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                 </div>
                 <div className="relative flex justify-center text-sm">
                   <span className="px-2 bg-white text-gray-500">
-                    New to Serene Spa?
+                  ¿Eres nuevo en Spa Sentirse Bien?
                   </span>
                 </div>
               </div>
@@ -183,7 +183,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     fullWidth
                     className="flex items-center justify-center"
                   >
-                    Create an account
+                    Crear una cuenta
                   </Button>
                 </Link>
               </div>
@@ -195,9 +195,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
               <div className="w-16 h-16 bg-[#f0faf1] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="h-8 w-8 text-emerald-600" />
               </div>
-              <h2 className="text-2xl font-bold text-emerald-700">Reset Password</h2>
+              <h2 className="text-2xl font-bold text-emerald-700">Restablecer contraseña</h2>
               <p className="mt-2 text-gray-600">
-                Enter your email to receive reset instructions
+                Ingresa tu correo electrónico para recibir instrucciones de restablecimiento
               </p>
             </div>
             
@@ -206,9 +206,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Mail className="h-8 w-8 text-emerald-600" />
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Check your email</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Revisa tu correo electrónico</h3>
                 <p className="text-gray-600 mb-6">
-                  We've sent password reset instructions to<br />
+                  Hemos enviado instrucciones para restablecer la contraseña a<br />
                   <span className="font-medium">{resetEmail}</span>
                 </p>
                 <Button
@@ -219,7 +219,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     setResetEmail('');
                   }}
                 >
-                  Back to login
+                  Volver al inicio de sesión
                 </Button>
               </div>
             ) : (
@@ -234,7 +234,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     value={resetEmail}
                     onChange={(e) => setResetEmail(e.target.value)}
                     error={errors.email}
-                    placeholder="your@email.com"
+                    placeholder="ejemplo@email.com"
                     className="pl-10"
                     required
                   />
@@ -247,7 +247,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     onClick={() => setShowForgotPassword(false)}
                     fullWidth
                   >
-                    Cancel
+                    Cancelar
                   </Button>
                   
                   <Button
@@ -255,7 +255,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
                     isLoading={isLoading}
                     fullWidth
                   >
-                    Send reset link
+                    Enviar enlace de restablecimiento
                   </Button>
                 </div>
               </form>

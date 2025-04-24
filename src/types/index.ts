@@ -19,7 +19,7 @@ export interface Appointment {
   serviceId: string;
   date: string;
   time: string;
-  status: 'pending' | 'confirmed' | 'cancelled';
+  status: 'pendiente' | 'confirmado' | 'cancelado';
 }
 
 export interface TimeSlot {

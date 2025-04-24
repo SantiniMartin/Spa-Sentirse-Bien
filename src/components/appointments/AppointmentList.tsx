@@ -39,12 +39,12 @@ const AppointmentList: React.FC = () => {
           <div className="mb-4">
             <CalendarDays size={48} className="mx-auto text-gray-400" />
           </div>
-          <h3 className="text-xl font-semibold text-gray-700 mb-2">No Appointments Yet</h3>
+          <h3 className="text-xl font-semibold text-gray-700 mb-2">No hay citas todavía</h3>
           <p className="text-gray-500 mb-6">
-            You don't have any appointments scheduled. Book your first treatment today!
+            No tienes citas programadas. ¡Reserva tu primer tratamiento hoy mismo!
           </p>
           <Link to="/book">
-            <Button>Book an Appointment</Button>
+            <Button>Reservar una cita</Button>
           </Link>
         </div>
       </Card>
@@ -54,9 +54,9 @@ const AppointmentList: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-emerald-700">Your Appointments</h2>
+        <h2 className="text-2xl font-bold text-emerald-700">Sus citas</h2>
         <Link to="/book">
-          <Button>Book New</Button>
+          <Button>Nueva cita</Button>
         </Link>
       </div>
       
@@ -85,9 +85,9 @@ const AppointmentList: React.FC = () => {
                 <div>
                   <span 
                     className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${
-                      appointment.status === 'confirmed' 
+                      appointment.status === 'confirmado' 
                         ? 'bg-green-100 text-green-800' 
-                        : appointment.status === 'pending' 
+                        : appointment.status === 'pendiente' 
                         ? 'bg-yellow-100 text-yellow-800'
                         : 'bg-red-100 text-red-800'
                     }`}
@@ -101,7 +101,7 @@ const AppointmentList: React.FC = () => {
                 <Link to={`/appointments/edit/${appointment.id}`}>
                   <Button variant="outline" className="flex items-center">
                     <Edit2 size={16} className="mr-1" />
-                    Edit
+                    Editar
                   </Button>
                 </Link>
                 
@@ -111,7 +111,7 @@ const AppointmentList: React.FC = () => {
                   onClick={() => handleDeleteClick(appointment.id)}
                 >
                   <Trash2 size={16} className="mr-1" />
-                  Cancel
+                  Cancelar
                 </Button>
               </div>
             </div>
@@ -120,23 +120,23 @@ const AppointmentList: React.FC = () => {
             {appointmentToDelete === appointment.id && (
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <div className="text-sm text-gray-700 mb-3">
-                  Are you sure you want to cancel this appointment?
+                ¿Estás seguro de que deseas cancelar esta cita?
                 </div>
                 <div className="flex space-x-3">
                   <Button
                     variant="outline"
-                    size="sm"
+                    // size="sm"
                     onClick={cancelDelete}
                   >
-                    Keep Appointment
+                    Mantener cita
                   </Button>
                   <Button
                     variant="outline"
                     className="text-red-600 border-red-200 hover:bg-red-50"
-                    size="sm"
+                    // size="sm"
                     onClick={confirmDelete}
                   >
-                    Yes, Cancel
+                    Si, cancelar
                   </Button>
                 </div>
               </div>
