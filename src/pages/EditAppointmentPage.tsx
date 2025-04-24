@@ -1,0 +1,28 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import EditAppointment from '../components/appointments/EditAppointment';
+
+const EditAppointmentPage: React.FC = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+  
+  // Redirect to login if not authenticated
+  React.useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/login');
+    }
+  }, [isAuthenticated, navigate]);
+
+  if (!isAuthenticated) {
+    return null; // Don't render anything if not authenticated
+  }
+
+  return (
+    <div className="bg-[#f0faf1] py-12">
+      <EditAppointment />
+    </div>
+  );
+};
+
+export default EditAppointmentPage;
