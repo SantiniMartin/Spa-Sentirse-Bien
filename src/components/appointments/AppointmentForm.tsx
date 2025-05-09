@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { CalendarDays, Clock } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import { useAppointments } from '../../context/AppointmentContext';
+//import { useAppointments } from '../../context/AppointmentContext';
 import { Service } from '../../types';
 import { services } from '../../data/services';
 import { generateTimeSlots, formatTime } from '../../data/appointments';
@@ -17,7 +17,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onSubmitSuccess }) =>
   const navigate = useNavigate();
   const location = useLocation();
   const { user, isAuthenticated } = useAuth();
-  const { addAppointment } = useAppointments();
+  //const { addAppointment } = useAppointments();
 
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [selectedDate, setSelectedDate] = useState<string>('');
@@ -96,14 +96,34 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onSubmitSuccess }) =>
     
     setIsLoading(true);
     
-    // Create new appointment
-    addAppointment({
-      userId: user!.id,
-      serviceId: selectedService!.id,
-      date: selectedDate,
-      time: selectedTime,
-      status: 'pending'
-    });
+    fetch("http://localhost:8000/api/appointments/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // "Authorization": `Bearer ${user.token}` // si usás JWT
+      },
+      body: JSON.stringify({
+        name: user?.name || "Guest",  // o ajustá según tu modelo Django
+        date: selectedDate,
+        service: selectedService?.name,
+      })
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Error al crear cita");
+      return res.json();
+    })
+    .then(() => {
+      if (onSubmitSuccess) onSubmitSuccess();
+    })    
+    //.then(data => {
+    //  if (onSubmitSuccess) onSubmitSuccess();
+    //  else navigate("/appointments");
+    //})
+    .catch(err => {
+      console.error(err);
+      alert("Ocurrió un error al crear la cita.");
+    })
+    .finally(() => setIsLoading(false));
     
     setIsLoading(false);
     
